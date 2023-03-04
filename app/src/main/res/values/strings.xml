@@ -1,0 +1,13 @@
+<resources>
+    <string name="app_name" translatable="false">Math4Kids</string>
+    <string name="play">Play</string>
+    <string name="addition">Addition</string>
+    <string name="subtraction">Subtraction</string>
+    <string name="multiplication">Multiplication</string>
+    <string name="what_is_result">What is result of</string>
+    <string name="Choose_your_answer">Choose your answer</string>
+    <string name="Brawo">Very good</string>
+    <string name="TryAgain">Try again</string>
+    <string name="correct">Correct:</string>
+    <string name="games_count">Total games:</string>
+</resources>

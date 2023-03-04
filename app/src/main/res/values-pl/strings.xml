@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="play">Graj</string>
+    <string name="addition">Dodawanie</string>
+    <string name="subtraction">Odejmowanie</string>
+    <string name="multiplication">Mnożenie</string>
+    <string name="what_is_result">Jaki jest wynik</string>
+    <string name="Choose_your_answer">Która odpowiedź jest poprawna</string>
+    <string name="Brawo">Bardzo dobrze</string>
+    <string name="TryAgain">Spróbuj jeszcze raz</string>
+    <string name="correct">Poprawnie:</string>
+    <string name="games_count">Liczba gier:</string>
+
+</resources>
