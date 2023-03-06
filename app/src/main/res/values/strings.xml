@@ -4,7 +4,8 @@
     <string name="addition">Addition</string>
     <string name="subtraction">Subtraction</string>
     <string name="multiplication">Multiplication</string>
-    <string name="what_is_result">What is result of</string>
+    <string name="division">Division</string>
+    <string name="what_is_result">What is the result of</string>
     <string name="Choose_your_answer">Choose your answer</string>
     <string name="Brawo">Very good</string>
     <string name="TryAgain">Try again</string>

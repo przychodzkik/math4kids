@@ -10,6 +10,7 @@ import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.aspectRatio
 import androidx.compose.foundation.layout.fillMaxWidth
+import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.shape.CircleShape
@@ -22,6 +23,8 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.RectangleShape
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.stringResource
+import androidx.compose.ui.text.font.FontStyle
+import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
@@ -30,6 +33,7 @@ import pl.przychodzki.krzysztof.math4kids.R
 import pl.przychodzki.krzysztof.math4kids.data.GameAction
 import pl.przychodzki.krzysztof.math4kids.data.GameState
 import pl.przychodzki.krzysztof.math4kids.ui.GameViewModel
+import pl.przychodzki.krzysztof.math4kids.ui.theme.Green80
 
 @Composable
 fun PlayScreen(
@@ -37,7 +41,17 @@ fun PlayScreen(
     viewModel: GameViewModel,
     modifier: Modifier = Modifier
 ) {
-    Box(modifier = Modifier.fillMaxWidth()) {
+    Box(
+        modifier = Modifier.fillMaxWidth(),
+        contentAlignment = Alignment.Center
+    ) {
+        Row(
+            modifier = modifier
+                .fillMaxWidth()
+                .align(Alignment.TopCenter)
+        ) {
+            Scores(state = state)
+        }
         Column(
             modifier = modifier
                 .padding(16.dp)
@@ -45,7 +59,8 @@ fun PlayScreen(
             horizontalAlignment = Alignment.CenterHorizontally,
             verticalArrangement = Arrangement.spacedBy(8.dp)
         ) {
-            Scores(state = state)
+
+            Spacer(modifier = Modifier.height(24.dp))
             Question(Pair(state.a, state.b), state.opSymbol)
             Possibilities(state = state, onAction = viewModel::onAction)
             Info(state)
@@ -65,35 +80,36 @@ fun PlayScreenPreview() {
 fun Scores(state: GameState, modifier: Modifier = Modifier) {
     Row(
         modifier = Modifier.fillMaxWidth(),
+        verticalAlignment = Alignment.CenterVertically,
         horizontalArrangement = Arrangement.SpaceEvenly
     ) {
-        Column {
-            Text(
-                text = stringResource(R.string.correct),
-                fontSize = 24.sp,
-                color = Color.Black
-            )
-            Text(
-                text = state.correct.toString(),
-                fontSize = 18.sp,
-                color = Color.Black,
-                textAlign = TextAlign.Right
-            )
-        }
-        Spacer(modifier = Modifier.width(24.dp))
-        Column {
-            Text(
-                text = stringResource(R.string.games_count),
-                fontSize = 24.sp,
-                color = Color.Black
-            )
-            Text(
-                text = state.games.toString(),
-                fontSize = 18.sp,
-                color = Color.Black,
-                textAlign = TextAlign.Right
-            )
-        }
+        Text(
+            text = stringResource(R.string.correct),
+            fontSize = 24.sp,
+            fontWeight = FontWeight.Bold,
+            color = Color.Black
+        )
+        Text(
+            text = state.correct.toString(),
+            fontSize = 22.sp,
+            color = Color.Black,
+            fontStyle = FontStyle.Italic,
+            textAlign = TextAlign.Right
+        )
+//        Spacer(modifier = Modifier.width(24.dp))
+        Text(
+            text = stringResource(R.string.games_count),
+            fontSize = 24.sp,
+            fontWeight = FontWeight.Bold,
+            color = Color.Black
+        )
+        Text(
+            text = state.games.toString(),
+            fontSize = 22.sp,
+            fontStyle = FontStyle.Italic,
+            color = Color.Black,
+            textAlign = TextAlign.Right
+        )
     }
 }
 
@@ -135,7 +151,6 @@ fun Question(values: Pair<Int, Int>, symbol: String, modifier: Modifier = Modifi
 @Composable
 fun Possibilities(state: GameState, modifier: Modifier = Modifier, onAction: (GameAction) -> Unit) {
     val things = state.posAns
-    val shouldAnswer = state.ans
     Text(
         text = stringResource(R.string.Choose_your_answer),
         fontSize = 24.sp,
@@ -192,6 +207,7 @@ fun GuessButton(
             .clip(CircleShape)
             .clickable { onClick() }
             .then(modifier)
+            .background(color = Green80)
     ) {
         Text(
             text = value.toString(),
@@ -213,7 +229,7 @@ fun QuestionButton(
     ) {
         Text(
             text = value,
-            fontSize = 36.sp
+            fontSize = 42.sp
         )
     }
 }

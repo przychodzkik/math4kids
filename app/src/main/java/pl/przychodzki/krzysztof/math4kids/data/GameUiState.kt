@@ -28,7 +28,7 @@ class Operation(private val operationRange: OperationRange) {
         b = operationRange.range.random()
 
         return when (operationRange) {
-            Subtract -> {
+            Subtract, Divide -> {
                 if (a < b) {
                     val c = a
                     a = b

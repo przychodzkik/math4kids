@@ -1,7 +1,7 @@
 package pl.przychodzki.krzysztof.math4kids.ui.theme
 
 import androidx.compose.ui.graphics.Color
-
+val Green80 = Color(0xFFB9DB92)
 val Pink400 = Color(0xFFEC407A)
 val Pink600 = Color(0xFFD81B60)
 val Pink950 = Color(0xFFB31650)

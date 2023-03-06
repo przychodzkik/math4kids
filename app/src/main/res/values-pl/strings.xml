@@ -4,6 +4,7 @@
     <string name="addition">Dodawanie</string>
     <string name="subtraction">Odejmowanie</string>
     <string name="multiplication">Mnożenie</string>
+    <string name="division">Dzielenie</string>
     <string name="what_is_result">Jaki jest wynik</string>
     <string name="Choose_your_answer">Która odpowiedź jest poprawna</string>
     <string name="Brawo">Bardzo dobrze</string>
